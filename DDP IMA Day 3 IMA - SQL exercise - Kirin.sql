@@ -1,11 +1,4 @@
 
---
--- SQL Query
---
-
-
--- using the DDL in the file final_exercise_ddl.sql, perfom the following - 
-
 
 -- DQL Tasks
 
