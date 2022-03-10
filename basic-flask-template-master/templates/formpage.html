@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>You can contact me on Github.</h1>
+
+    <p class="lead">
+        <form method="POST" action="submit" novalidate>
+            {{ form.csrf_token }}
+            {{ form.name.label }} {{ form.name(size=20) }}
+            {% for error in form.name.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+            {{ form.email.label }} {{ form.email(size=60) }}
+            {% for error in form.email.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+            {{ form.dob.label }} {{ form.dob(size=20) }}
+            {% for error in form.dob.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+            {{ form.specialism.label }} {{ form.specialism(size=40) }}
+            {% for error in form.specialism.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+            <input type="submit" value="submit">
+        </form>
+    </p>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>{{ app_data['description'] }}</h1>
+    <h2>Table page</h2>
+
+    <p class="lead">
+	<table>
+		<th>
+			<tr>     
+			<td><b>ID</b></td> 
+			<td><b>Name</b></td>
+			<td><b>Email</b></td> 
+			<td><b>Age</b></td> 
+			<td><b>Specialism</b></td> 
+			</tr>
+		</th>
+
+		{% for key,value in df.iterrows() %}
+		<tr>
+			<td>{{ value['ID'] }}</td>
+			<td>{{ value['Name'] }}</td>
+			<td>{{ value['Email'] }}</td>
+			<td>{{ value['Age'] }}</td>
+			<td>{{ value['Specialism'] }}</td>
+		{%endfor%} 
+		</tr>
+  	</table>
+</p>
+    <div> Now updated to Bootstrap (Version 4.4.1)</div>
+{% endblock %}
